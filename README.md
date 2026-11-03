@@ -1,13 +1,72 @@
 # SigmaOS-networking
 
-SigmaOS networking for the SigmaOS project.
+SigmaOS critical system component inspired by Arch Linux and Debian architecture.
 
-This repository owns the focused sigmaos networking component in SigmaOS's multi-repository architecture. The crate manifest and src/ tree are the source of truth for its current API and implementation status.
+## Overview
 
-## Development
+This component provides essential functionality for the SigmaOS operating system,
+following the modular design principles of Arch Linux and the stability focus of Debian.
 
-Use the Rust toolchain declared by the repository. Run cargo check and the available crate tests before proposing implementation changes. Keep component boundaries explicit, document upstream behavior that informs changes, and include rollback considerations for user-visible or system-level behavior.
+## Features
 
-## Status
+- Asynchronous I/O with Tokio
+- Comprehensive error handling with anyhow
+- Structured logging
+- Configuration management
+- Status monitoring
+- CLI interface with clap
 
-This overview describes repository scope; it does not claim that every planned feature is implemented or production-ready.
+## Installation
+
+```bash
+cargo build --release
+cargo install --path .
+```
+
+## Usage
+
+```bash
+# Initialize the component
+networking init
+
+# Start the component
+networking start
+
+# Stop the component
+networking stop
+
+# Check status
+networking status
+
+# Run the component
+networking run
+```
+
+## Configuration
+
+The component can be configured via environment variables or configuration files.
+
+## Building
+
+```bash
+cargo build --release
+```
+
+## Testing
+
+```bash
+cargo test
+```
+
+## License
+
+MIT License - See LICENSE file for details.
+
+## Contributing
+
+See CONTRIBUTING.md for guidelines.
+
+## Links
+
+- Repository: https://github.com/AaryanSinghChauhan09/SigmaOS-networking
+- SigmaOS: https://github.com/AaryanSinghChauhan09

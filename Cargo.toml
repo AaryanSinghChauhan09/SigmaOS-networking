@@ -1,15 +1,17 @@
 [package]
-name = "sigmaos-networking"
+name = "networking"
 version = "0.1.0"
 edition = "2021"
-authors = ["SigmaOS Project"]
-description = "SigmaOS networking"
-license = "GPL-3.0-or-later"
+description = "SigmaOS SigmaOS-networking component - Critical system infrastructure"
+license = "MIT"
 repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-networking"
-readme = "README.md"
 
 [dependencies]
-sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
-
-[profile.release]
-opt-level = 3
+clap = { version = "4.5", features = ["derive"] }
+tokio = { version = "1.35", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+env_logger = "0.11"
+anyhow = "1.0"
+thiserror = "1.0"
