@@ -139,3 +139,7 @@ mod tests {
         assert!(matches!(component.status(), ComponentStatus::Stopped));
     }
 }
+
+pub mod addr;
+pub mod conn;
+pub mod dns;
