@@ -3,12 +3,12 @@ name = "SigmaOS-networking"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "networking component"
+description = "SigmaOS networking stack and protocol implementations"
 upstream = []
 
 [contract]
 provides = ["component"]
-depends_on = []
+depends_on = ["SigmaOS-system"]
 
 [maturity]
 status = "Scaffold"
