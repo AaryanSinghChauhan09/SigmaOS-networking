@@ -79,14 +79,14 @@ impl Component for networking {
         info!("Initializing SigmaOS-networking");
         self.status = ComponentStatus::Initializing;
         
-        // Initialize logging
-        if self.config.debug {
+        // Initialize logging (idempotent — safe across repeated initialize()/tests)
+        let _ = if self.config.debug {
             env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("debug"))
-                .init();
+                .try_init()
         } else {
             env_logger::Builder::from_env(env_logger::Env::default().default_filter_or(&self.config.log_level))
-                .init();
-        }
+                .try_init()
+        };
         
         info!("Component configuration: {:?}", self.config);
         self.status = ComponentStatus::Stopped;
